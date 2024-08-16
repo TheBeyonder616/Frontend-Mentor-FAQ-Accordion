@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | FAQ accordion</title>
+  </head>
+  <body>
+    <main id="main" class="main">
+      <article class="accordion">
+        <header class="accordion__header">
+          <figure>
+            <div>
+              <img src="./assets/images/icon-star.svg" alt="A star svg Icon" />
+            </div>
+            <figcaption>
+              <h1>FAQs</h1>
+            </figcaption>
+          </figure>
+        </header>
+
+        <!-- Question 1 -->
+        <section class="accordion__faq" data-faq>
+          <div data-wapper="1">
+            <h2 class="heading-question" aria-question>
+              What is Frontend Mentor,
+              <span> and how will it help me? </span>
+            </h2>
+
+            <div data-svg>
+              <img
+                src="./assets/images/icon-plus.svg"
+                data-src="./assets/images/icon-minus.svg"
+                alt="an icon to open and close the faq question"
+              />
+            </div>
+          </div>
+          <!-- Answer -->
+          <div data-faqAnswer="1">
+            <p>
+              Frontend Mentor offers realistic coding challenges to help
+              developers improve their frontend coding skills with projects in
+              HTML, CSS, and JavaScript. It's suitable for all levels and ideal
+              for portfolio building.
+            </p>
+          </div>
+        </section>
+
+        <!-- Question 2 -->
+        <section class="accordion__faq" data-faq>
+          <div data-wapper="2">
+            <h2 class="heading-question">Is Frontend Mentor free?</h2>
+
+            <div data-svg>
+              <img
+                src="./assets/images/icon-plus.svg"
+                data-src="./assets/images/icon-minus.svg"
+                alt="an icon to open and close the faq question"
+              />
+            </div>
+          </div>
+          <!-- Answer -->
+          <div data-faqAnswer="2">
+            <p>
+              Yes, Frontend Mentor offers both free and premium coding
+              challenges, with the free option providing access to a range of
+              projects suitable for all skill levels.
+            </p>
+          </div>
+        </section>
+
+        <!-- Question 3 -->
+        <section class="accordion__faq" data-faq>
+          <div data-wapper="3">
+            <h2 class="heading-question">
+              Can I use Frontend Mentor
+              <span> projects in my portfolio? </span>
+            </h2>
+
+            <div data-svg>
+              <img
+                src="./assets/images/icon-plus.svg"
+                data-src="./assets/images/icon-minus.svg"
+                alt="an icon to open and close the faq question"
+              />
+            </div>
+          </div>
+          <!-- Answer -->
+          <div data-faqAnswer="3">
+            <p>
+              Yes, you can use projects completed on Frontend Mentor in your
+              portfolio. It's an excellent way to showcase your skills to
+              potential employers!
+            </p>
+          </div>
+        </section>
+
+        <!-- Question 4 -->
+        <section class="accordion__faq" data-faq>
+          <div data-wapper="4">
+            <h2 class="heading-question">
+              How can I get help if I'm
+              <span> stuck on a challenge? </span>
+            </h2>
+
+            <div data-svg>
+              <img
+                src="./assets/images/icon-plus.svg"
+                data-src="./assets/images/icon-minus.svg"
+                alt="an icon to open and close the faq question"
+              />
+            </div>
+          </div>
+          <!-- Answer -->
+          <div data-faqAnswer="4">
+            <p>
+              The best place to get help is inside Frontend Mentor's Discord
+              community. There's a help channel where you can ask questions and
+              seek support from other community members.
+            </p>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Peter Godspower</a>.
+    </footer>
+  </body>
+</html>

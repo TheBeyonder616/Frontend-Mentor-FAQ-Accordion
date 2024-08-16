@@ -1,0 +1,225 @@
+:root {
+  --crl-White: hsl(0, 0%, 100%);
+  /* Secondary */
+  --crl-Secondary: hsl(275, 100%, 97%);
+  /* Primary */
+  --crl-Primary-light: hsl(292, 16%, 49%);
+  --crl-Primary-dark: hsl(292, 42%, 14%);
+
+  /* Font weights */
+  --font: clamp(2.3rem, 2.2vw, 2.9rem);
+  --font-Small: 400;
+  --font-Mid: 600;
+  --font-Large: 700;
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: url(./assets/fonts/static/WorkSans-Bold.ttf) format("truetype");
+  font-weight: var(--font-Large);
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: url(./assets/fonts/static/WorkSans-SemiBold.ttf) format("truetype");
+  font-weight: var(--font-Mid);
+}
+
+@font-face {
+  font-family: "WorkSans";
+  src: url(./assets/fonts/static/WorkSans-Regular.ttf) format("truetype");
+  font-weight: var(--font-Small);
+}
+
+/* ---------------------------------------------Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1rem = 10px */
+}
+
+body {
+  font-family: "WorkSans", sans-serif;
+  background-color: var(--crl-Secondary);
+  background: url(./assets/images/background-pattern-mobile.svg) repeat-x top;
+  background-size: auto;
+}
+
+@media only screen and (min-width: 64em) {
+  body {
+    background: url(./assets/images/background-pattern-desktop.svg) repeat-x;
+    background-size: auto;
+  }
+}
+/*----------------------------------------------------------Base */
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.accordion {
+  --width: clamp(29rem, 100%, 33rem);
+  width: var(--width);
+  border-radius: 1rem;
+  background-color: var(--crl-White);
+  box-shadow: 0 0.5rem 1rem;
+  padding: 2rem 0;
+  margin: 10rem auto;
+}
+
+@media only screen and (min-width: 64em) {
+  .accordion {
+    --width: clamp(29rem, 100%, 40rem);
+  }
+}
+/* -----------------------------------------header */
+.accordion__header {
+  width: 90%;
+  margin: 0 auto;
+}
+.accordion__header figure {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.accordion__header figure div {
+  overflow: hidden;
+  width: 2rem;
+  height: 2rem;
+}
+.accordion__header figure div img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.accordion__header figcaption h1 {
+  font-size: var(--font);
+  font-weight: var(--font-Large);
+  color: var(--crl-Primary-dark);
+}
+
+/* ----------------------------Faq */
+.accordion__faq {
+  width: 90%;
+  margin: 1rem auto 0 auto;
+}
+
+.accordion__faq div[data-wapper] {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.accordion__faq:nth-child(2) div[data-wapper]:not(:nth-child(0)) {
+  margin-bottom: 2rem;
+}
+.accordion__faq:nth-child(2) div[data-wapper]:not(:nth-child(0))::before {
+  top: 50%;
+}
+.accordion__faq div[data-wapper] {
+  margin: 3rem 0;
+}
+
+.accordion__faq div[data-wapper]::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 100%;
+  top: 100%;
+  border-bottom: 1px solid var(--crl-Primary-light);
+  opacity: 0.1;
+}
+
+.accordion__faq div[data-svg] {
+  overflow: hidden;
+  width: 3rem;
+  aspect-ratio: 1;
+}
+
+.accordion__faq div[data-svg] img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.accordion__faq h2 {
+  font-size: calc(var(--font) * 0.65);
+  color: var(--crl-Primary-dark);
+  font-weight: var(--font-Mid);
+}
+
+.accordion__faq h2 span {
+  display: block;
+}
+
+.accordion__faq div[data-faqAnswer] {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease;
+}
+.accordion__faq p {
+  font-size: calc(var(--font) * 0.6);
+}
+
+/*----------------------------------------------------Footer */
+.attribution {
+  --font: calc(clamp(1.2rem, 1.6vw, 1.9rem) * 0.8);
+  font-size: var(--font);
+  text-align: center;
+  color: var(--crl-Primary-dark);
+  margin: 1rem auto;
+  font-weight: var(--font-Large);
+}
+.attribution a,
+.attribution a:active,
+.attribution a:link {
+  text-decoration: none;
+  cursor: pointer;
+  color: var(--crl-Primary-dark);
+  animation: magestic 2s infinite 2s;
+}
+
+.attribution a:hover,
+.attribution a:focus {
+  color: var(--crl-Primary-light);
+}
+
+@keyframes magestic {
+  0%,
+  30% {
+    transform: translate(0);
+  }
+  49.99% {
+    --shadow: var(--crl-Primary-dark);
+    border-radius: 1rem;
+    border: 0;
+    box-shadow: inset 0 0.5rem 1rem var(--shadow);
+  }
+  50%,
+  100% {
+    transform: translate(1rem);
+  }
+}
+
+/*---------------------------------Dom  */
+
+.open {
+  transition: max-height 5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* overflow: hidden; */
+  max-height: 100rem !important;
+}
